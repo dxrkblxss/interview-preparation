@@ -1,4 +1,4 @@
-namespace InterviewPreparation;
+namespace InterviewPreparation.Algorithms.TwoPointers;
 
 public class ContainerWithMostWater
 {

@@ -1,6 +1,6 @@
 ﻿using System.Text;
 
-namespace InterviewPreparation;
+namespace InterviewPreparation.CodeWars;
 
 public static class JadenCase
 {
