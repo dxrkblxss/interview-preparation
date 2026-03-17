@@ -1,33 +1,44 @@
 namespace InterviewPreparation.LanguageConcepts.DisposablePattern;
 
-public class MyDbConnection : IDisposable
+public class ResourceHolder : IDisposable
 {
     private bool _disposed = false;
 
     public void Dispose()
     {
-        Console.WriteLine("Соединение закрыто");
-        _disposed = true;
+        Dispose(true);
         GC.SuppressFinalize(this);
+    }
+
+    protected virtual void Dispose(bool disposing)
+    {
+        if (_disposed) return;
+
+        if (disposing)
+        {
+            Console.WriteLine("Connection has been closed.");
+        }
+
+        _disposed = true;
     }
 
     public void SomeMethod()
     {
         ObjectDisposedException.ThrowIf(_disposed, this);
 
-        Console.WriteLine("Blah-blah-blah");
+        Console.WriteLine("Blah-blah-blah.");
     }
 }
 
 public class Program
 {
-    // public static void Main()
-    // {
-    //     using var dbConnection = new MyDbConnection();
-    //     dbConnection.SomeMethod();
+    /* public static void Main()
+    {
+        using var resHolder = new ResourceHolder();
+        resHolder.SomeMethod();
 
-    //     var secDbConnection = new MyDbConnection();
-    //     secDbConnection.Dispose();
-    //     secDbConnection.SomeMethod();
-    // }
+        var secResHolder = new ResourceHolder();
+        secResHolder.Dispose();
+        secResHolder.SomeMethod();
+    } */
 }

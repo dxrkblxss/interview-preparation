@@ -1,15 +1,13 @@
-﻿using System.Text;
+﻿namespace InterviewPreparation.CodeWars.ToJadenCase;
 
-namespace InterviewPreparation.CodeWars;
+using System.Text;
 
-public static class JadenCase
+public static class ToJadenCaseSolution
 {
-    // public static void Main()
-    // {
-    //     string phrase = "hello world!";
-
-    //     Console.WriteLine(phrase.ToJadenCase());
-    // }
+    /* public static void Main()
+    {
+        Console.WriteLine("hello world!".ToJadenCase());
+    } */
 
     public static string ToJadenCase(this string phrase)
     {

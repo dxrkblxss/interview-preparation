@@ -1,15 +1,13 @@
 namespace InterviewPreparation.Algorithms.TwoPointers;
 
-public class ContainerWithMostWater
+public class ContainerWithMostWaterSolution
 {
-    // public static void Main()
-    // {
-    //     int maxArea = MaxArea([5, 8, 1, 7, 2, 9]);
+    /* public static void Main()
+    {
+        Console.WriteLine(ContainerWithMostWater([5, 8, 1, 7, 2, 9]));
+    } */
 
-    //     Console.WriteLine(maxArea);
-    // }
-
-    public static int MaxArea(int[] height)
+    public static int ContainerWithMostWater(int[] height)
     {
         int maxArea = 0,
             l = 0,
@@ -22,7 +20,7 @@ public class ContainerWithMostWater
 
             if (area > maxArea) maxArea = area;
 
-            if (min == height[l]) l++; else r--;
+            if (height[l] == min) l++; else r--;
         }
 
         return maxArea;
